@@ -1,0 +1,180 @@
+/* Root navigation specific */
+msr-horizontal-navigation {
+
+    .msr-horizontal-navigation-wrapper {
+        display: flex;
+        align-items: center;
+
+        /* Basic, Branch */
+        msr-horizontal-navigation-basic-item,
+        msr-horizontal-navigation-branch-item {
+
+            @screen sm {
+
+                &:hover {
+
+                    .msr-horizontal-navigation-item-wrapper {
+                        @apply bg-hover;
+                    }
+                }
+            }
+
+            .msr-horizontal-navigation-item-wrapper {
+                border-radius: 4px;
+                overflow: hidden;
+
+                .msr-horizontal-navigation-item {
+                    padding: 0 16px;
+                    cursor: pointer;
+                    user-select: none;
+
+                    .msr-horizontal-navigation-item-icon {
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+
+        /* Basic - When item active (current link) */
+        msr-horizontal-navigation-basic-item {
+
+            .msr-horizontal-navigation-item-active,
+            .msr-horizontal-navigation-item-active-forced {
+
+                .msr-horizontal-navigation-item-title {
+                    @apply text-primary #{'!important'};
+                }
+
+                .msr-horizontal-navigation-item-subtitle {
+                    @apply text-primary-400 #{'!important'};
+
+                    .dark & {
+                        @apply text-primary-600 #{'!important'};
+                    }
+                }
+
+                .msr-horizontal-navigation-item-icon {
+                    @apply text-primary #{'!important'};
+                }
+            }
+        }
+
+        /* Branch - When menu open */
+        msr-horizontal-navigation-branch-item {
+
+            .msr-horizontal-navigation-menu-active,
+            .msr-horizontal-navigation-menu-active-forced {
+
+                .msr-horizontal-navigation-item-wrapper {
+                    @apply bg-hover;
+                }
+            }
+        }
+
+        /* Spacer */
+        msr-horizontal-navigation-spacer-item {
+            margin: 12px 0;
+        }
+    }
+}
+
+/* Menu panel specific */
+.msr-horizontal-navigation-menu-panel {
+
+    .msr-horizontal-navigation-menu-item {
+        height: auto;
+        min-height: 0;
+        line-height: normal;
+        white-space: normal;
+
+        /* Basic, Branch */
+        msr-horizontal-navigation-basic-item,
+        msr-horizontal-navigation-branch-item,
+        msr-horizontal-navigation-divider-item {
+            display: flex;
+            flex: 1 1 auto;
+        }
+
+        /* Divider */
+        msr-horizontal-navigation-divider-item {
+            margin: 8px -16px;
+
+            .msr-horizontal-navigation-item-wrapper {
+                height: 1px;
+                box-shadow: 0 1px 0 0;
+            }
+        }
+    }
+}
+
+/* Navigation menu item common */
+.msr-horizontal-navigation-menu-item {
+
+    /* Basic - When item active (current link) */
+    msr-horizontal-navigation-basic-item {
+
+        .msr-horizontal-navigation-item-active,
+        .msr-horizontal-navigation-item-active-forced {
+
+            .msr-horizontal-navigation-item-title {
+                @apply text-primary #{'!important'};
+            }
+
+            .msr-horizontal-navigation-item-subtitle {
+                @apply text-primary-400 #{'!important'};
+
+                .dark & {
+                    @apply text-primary-600 #{'!important'};
+                }
+            }
+
+            .msr-horizontal-navigation-item-icon {
+                @apply text-primary #{'!important'};
+            }
+        }
+    }
+
+    .msr-horizontal-navigation-item-wrapper {
+        width: 100%;
+
+        &.msr-horizontal-navigation-item-has-subtitle {
+
+            .msr-horizontal-navigation-item {
+                min-height: 56px;
+            }
+        }
+
+        .msr-horizontal-navigation-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 48px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+
+            .msr-horizontal-navigation-item-title-wrapper {
+
+                .msr-horizontal-navigation-item-subtitle {
+                    font-size: 12px;
+                }
+            }
+
+            .msr-horizontal-navigation-item-badge {
+                margin-left: auto;
+
+                .msr-horizontal-navigation-item-badge-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 10px;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
